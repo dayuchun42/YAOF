@@ -182,13 +182,13 @@ cp -rf ../Lienol/tools/upx ./tools/upx
 rm -rf ./feeds/packages/lang/golang
 cp -rf ../openwrt_pkg_ma/lang/golang ./feeds/packages/lang/golang
 # 访问控制
-cp -rf ../lede_luci/applications/luci-app-accesscontrol ./package/new/luci-app-accesscontrol
-cp -rf ../OpenWrt-Add/luci-app-control-weburl ./package/new/luci-app-control-weburl
+#cp -rf ../lede_luci/applications/luci-app-accesscontrol ./package/new/luci-app-accesscontrol
+#cp -rf ../OpenWrt-Add/luci-app-control-weburl ./package/new/luci-app-control-weburl
 # 广告过滤 AdGuard
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
-rm -rf ./feeds/packages/net/adguardhome
-cp -rf ../openwrt_pkg_ma/net/adguardhome ./feeds/packages/net/adguardhome
-sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/new/luci-app-adguardhome
+#rm -rf ./feeds/packages/net/adguardhome
+#cp -rf ../openwrt_pkg_ma/net/adguardhome ./feeds/packages/net/adguardhome
+#sed -i '/init/d' feeds/packages/net/adguardhome/Makefile
 # Argon 主题
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
 rm -rf ./package/new/luci-theme-argon/htdocs/luci-static/argon/background/README.md
@@ -283,14 +283,14 @@ cp -f ../PATCH/odhcpd/0001-odhcpd-improve-RFC-9096-compliance.patch ./package/ne
 git clone --depth 1 https://github.com/BoringCat/luci-app-mentohust package/new/luci-app-mentohust
 git clone --depth 1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk package/new/MentoHUST
 # Mosdns
-cp -rf ../mosdns/mosdns ./package/new/mosdns
-cp -rf ../mosdns/luci-app-mosdns ./package/new/luci-app-mosdns
-rm -rf ./feeds/packages/net/v2ray-geodata
-cp -rf ../mosdns/v2ray-geodata ./package/new/v2ray-geodata
+#cp -rf ../mosdns/mosdns ./package/new/mosdns
+#cp -rf ../mosdns/luci-app-mosdns ./package/new/luci-app-mosdns
+#rm -rf ./feeds/packages/net/v2ray-geodata
+#cp -rf ../mosdns/v2ray-geodata ./package/new/v2ray-geodata
 # 流量监管
-cp -rf ../lede_luci/applications/luci-app-netdata ./package/new/luci-app-netdata
+#cp -rf ../lede_luci/applications/luci-app-netdata ./package/new/luci-app-netdata
 # 上网 APP 过滤
-git clone -b master --depth 1 https://github.com/sbwml/OpenAppFilter.git package/new/OpenAppFilter
+#git clone -b master --depth 1 https://github.com/sbwml/OpenAppFilter.git package/new/OpenAppFilter
 # OLED 驱动程序
 git clone -b master --depth 1 https://github.com/NateLol/luci-app-oled.git package/new/luci-app-oled
 # homeproxy
@@ -331,16 +331,16 @@ cn.ntp.org.cn
 ntp.ntsc.ac.cn
 ' >>./package/new/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 # qBittorrent 下载
-cp -rf ../lede_luci/applications/luci-app-qbittorrent ./package/new/luci-app-qbittorrent
-cp -rf ../lede_pkg/net/qBittorrent-static ./package/new/qBittorrent-static
-cp -rf ../lede_pkg/net/qBittorrent ./package/new/qBittorrent
-cp -rf ../lede_pkg/libs/qtbase ./package/new/qtbase
-cp -rf ../lede_pkg/libs/qttools ./package/new/qttools
-cp -rf ../lede_pkg/libs/rblibtorrent ./package/new/rblibtorrent
+#cp -rf ../lede_luci/applications/luci-app-qbittorrent ./package/new/luci-app-qbittorrent
+#cp -rf ../lede_pkg/net/qBittorrent-static ./package/new/qBittorrent-static
+#cp -rf ../lede_pkg/net/qBittorrent ./package/new/qBittorrent
+#cp -rf ../lede_pkg/libs/qtbase ./package/new/qtbase
+#cp -rf ../lede_pkg/libs/qttools ./package/new/qttools
+#cp -rf ../lede_pkg/libs/rblibtorrent ./package/new/rblibtorrent
 # 清理内存
 cp -rf ../lede_luci/applications/luci-app-ramfree ./package/new/luci-app-ramfree
 # ServerChan 微信推送
-git clone -b master --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/new/luci-app-serverchan
+#git clone -b master --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/new/luci-app-serverchan
 # ShadowsocksR Plus+ 依赖
 rm -rf ./feeds/packages/net/shadowsocks-libev
 cp -rf ../lede_pkg/net/shadowsocks-libev ./package/new/shadowsocks-libev
@@ -417,23 +417,23 @@ ln -sf ../../../feeds/packages/libs/quickjspp ./package/feeds/packages/quickjspp
 cp -rf ../immortalwrt_pkg/libs/toml11 ./feeds/packages/libs/toml11
 ln -sf ../../../feeds/packages/libs/toml11 ./package/feeds/packages/toml11
 # 网易云音乐解锁
-git clone -b js --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
+#git clone -b js --depth 1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/new/UnblockNeteaseMusic
 # uwsgi
-sed -i 's,procd_set_param stderr 1,procd_set_param stderr 0,g' feeds/packages/net/uwsgi/files/uwsgi.init
-sed -i 's,buffer-size = 10000,buffer-size = 131072,g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
-sed -i 's,logger = luci,#logger = luci,g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
-sed -i '$a cgi-timeout = 600' feeds/packages/net/uwsgi/files-luci-support/luci-*.ini
-sed -i 's/threads = 1/threads = 2/g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
-sed -i 's/processes = 3/processes = 4/g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
-sed -i 's/cheaper = 1/cheaper = 2/g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
+#sed -i 's,procd_set_param stderr 1,procd_set_param stderr 0,g' feeds/packages/net/uwsgi/files/uwsgi.init
+#sed -i 's,buffer-size = 10000,buffer-size = 131072,g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
+#sed -i 's,logger = luci,#logger = luci,g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
+#sed -i '$a cgi-timeout = 600' feeds/packages/net/uwsgi/files-luci-support/luci-*.ini
+#sed -i 's/threads = 1/threads = 2/g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
+#sed -i 's/processes = 3/processes = 4/g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
+#sed -i 's/cheaper = 1/cheaper = 2/g' feeds/packages/net/uwsgi/files-luci-support/luci-webui.ini
 # rpcd
 sed -i 's/option timeout 30/option timeout 60/g' package/system/rpcd/files/rpcd.config
 sed -i 's#20) \* 1000#60) \* 1000#g' feeds/luci/modules/luci-base/htdocs/luci-static/resources/rpc.js
 # USB 打印机
-cp -rf ../lede_luci/applications/luci-app-usb-printer ./package/new/luci-app-usb-printer
+#cp -rf ../lede_luci/applications/luci-app-usb-printer ./package/new/luci-app-usb-printer
 # UU加速器
-cp -rf ../lede_luci/applications/luci-app-uugamebooster ./package/new/luci-app-uugamebooster
-cp -rf ../lede_pkg/net/uugamebooster ./package/new/uugamebooster
+#cp -rf ../lede_luci/applications/luci-app-uugamebooster ./package/new/luci-app-uugamebooster
+#cp -rf ../lede_pkg/net/uugamebooster ./package/new/uugamebooster
 # KMS 激活助手
 cp -rf ../lede_luci/applications/luci-app-vlmcsd ./package/new/luci-app-vlmcsd
 cp -rf ../lede_pkg/net/vlmcsd ./package/new/vlmcsd
@@ -443,22 +443,22 @@ git clone -b master --depth 1 https://github.com/jerrykuku/lua-maxminddb.git pac
 # 网络唤醒
 cp -rf ../zxlhhyccc/zxlhhyccc/luci-app-wolplus ./package/new/luci-app-wolplus
 # 流量监视
-git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
-git clone -b master --depth 1 https://github.com/brvphoenix/luci-app-wrtbwmon.git package/new/luci-app-wrtbwmon
+#git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
+#git clone -b master --depth 1 https://github.com/brvphoenix/luci-app-wrtbwmon.git package/new/luci-app-wrtbwmon
 # 迅雷快鸟宽带加速
-git clone --depth 1 https://github.com/kiddin9/luci-app-xlnetacc.git package/lean/luci-app-xlnetacc
+#git clone --depth 1 https://github.com/kiddin9/luci-app-xlnetacc.git package/lean/luci-app-xlnetacc
 # Zerotier
-cp -rf ../immortalwrt_luci/applications/luci-app-zerotier ./feeds/luci/applications/luci-app-zerotier
-cp -rf ../OpenWrt-Add/move_2_services.sh ./feeds/luci/applications/luci-app-zerotier/move_2_services.sh
-chmod -R 755 ./feeds/luci/applications/luci-app-zerotier/move_2_services.sh
-pushd feeds/luci/applications/luci-app-zerotier
-bash move_2_services.sh
-popd
-ln -sf ../../../feeds/luci/applications/luci-app-zerotier ./package/feeds/luci/luci-app-zerotier
-rm -rf ./feeds/packages/net/zerotier
-cp -rf ../immortalwrt_pkg/net/zerotier ./feeds/packages/net/zerotier
+#cp -rf ../immortalwrt_luci/applications/luci-app-zerotier ./feeds/luci/applications/luci-app-zerotier
+#cp -rf ../OpenWrt-Add/move_2_services.sh ./feeds/luci/applications/luci-app-zerotier/move_2_services.sh
+#chmod -R 755 ./feeds/luci/applications/luci-app-zerotier/move_2_services.sh
+#pushd feeds/luci/applications/luci-app-zerotier
+#bash move_2_services.sh
+#popd
+#ln -sf ../../../feeds/luci/applications/luci-app-zerotier ./package/feeds/luci/luci-app-zerotier
+#rm -rf ./feeds/packages/net/zerotier
+#cp -rf ../immortalwrt_pkg/net/zerotier ./feeds/packages/net/zerotier
 # watchcat
-echo > ./feeds/packages/utils/watchcat/files/watchcat.config
+#echo > ./feeds/packages/utils/watchcat/files/watchcat.config
 # sirpdboy
 mkdir -p package/sirpdboy
 cp -rf ../sirpdboy/luci-app-autotimeset ./package/sirpdboy/luci-app-autotimeset
