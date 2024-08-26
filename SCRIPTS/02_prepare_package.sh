@@ -153,14 +153,14 @@ rm -rf ./feeds/packages/utils/coremark
 cp -rf ../sbw_pkg/coremark ./feeds/packages/utils/coremark
 cp -rf ../immortalwrt_23/package/utils/mhz ./package/utils/mhz
 # Airconnect
-git clone https://github.com/sbwml/luci-app-airconnect package/new/airconnect
-sed -i 's,respawn,respawn 3600 5 0,g' package/new/airconnect/airconnect/files/airconnect.init
+#git clone https://github.com/sbwml/luci-app-airconnect package/new/airconnect
+#sed -i 's,respawn,respawn 3600 5 0,g' package/new/airconnect/airconnect/files/airconnect.init
 #cp -rf ../OpenWrt-Add/airconnect ./package/new/airconnect
 #cp -rf ../OpenWrt-Add/luci-app-airconnect ./package/new/luci-app-airconnect
 # luci-app-ap-modem
-cp -rf ../linkease/applications/luci-app-ap-modem ./package/new/luci-app-ap-modem
+#cp -rf ../linkease/applications/luci-app-ap-modem ./package/new/luci-app-ap-modem
 # luci-app-irqbalance
-cp -rf ../OpenWrt-Add/luci-app-irqbalance ./package/new/luci-app-irqbalance
+#cp -rf ../OpenWrt-Add/luci-app-irqbalance ./package/new/luci-app-irqbalance
 # 更换 Nodejs 版本
 rm -rf ./feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node
@@ -200,28 +200,28 @@ ln -sf ../../../feeds/luci/applications/luci-app-arpbind ./package/feeds/luci/lu
 cp -rf ../immortalwrt_luci/applications/luci-app-autoreboot ./feeds/luci/applications/luci-app-autoreboot
 ln -sf ../../../feeds/luci/applications/luci-app-autoreboot ./package/feeds/luci/luci-app-autoreboot
 # Boost 通用即插即用
-rm -rf ./feeds/packages/net/miniupnpd
-cp -rf ../openwrt_pkg_ma/net/miniupnpd ./feeds/packages/net/miniupnpd
-wget https://github.com/miniupnp/miniupnp/commit/0e8c68d.patch -O feeds/packages/net/miniupnpd/patches/0e8c68d.patch
-sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/0e8c68d.patch
-wget https://github.com/miniupnp/miniupnp/commit/21541fc.patch -O feeds/packages/net/miniupnpd/patches/21541fc.patch
-sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/21541fc.patch
-wget https://github.com/miniupnp/miniupnp/commit/b78a363.patch -O feeds/packages/net/miniupnpd/patches/b78a363.patch
-sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/b78a363.patch
-wget https://github.com/miniupnp/miniupnp/commit/8f2f392.patch -O feeds/packages/net/miniupnpd/patches/8f2f392.patch
-sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/8f2f392.patch
-wget https://github.com/miniupnp/miniupnp/commit/60f5705.patch -O feeds/packages/net/miniupnpd/patches/60f5705.patch
-sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/60f5705.patch
-wget https://github.com/miniupnp/miniupnp/commit/3f3582b.patch -O feeds/packages/net/miniupnpd/patches/3f3582b.patch
-sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/3f3582b.patch
-pushd feeds/packages
-patch -p1 <../../../PATCH/miniupnpd/01-set-presentation_url.patch
-patch -p1 <../../../PATCH/miniupnpd/02-force_forwarding.patch
-patch -p1 <../../../PATCH/miniupnpd/03-Update-301-options-force_forwarding-support.patch.patch
-popd
-pushd feeds/luci
-wget -qO- https://github.com/openwrt/luci/commit/0b5fb915.patch | patch -p1
-popd
+#rm -rf ./feeds/packages/net/miniupnpd
+#cp -rf ../openwrt_pkg_ma/net/miniupnpd ./feeds/packages/net/miniupnpd
+#wget https://github.com/miniupnp/miniupnp/commit/0e8c68d.patch -O feeds/packages/net/miniupnpd/patches/0e8c68d.patch
+#sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/0e8c68d.patch
+#wget https://github.com/miniupnp/miniupnp/commit/21541fc.patch -O feeds/packages/net/miniupnpd/patches/21541fc.patch
+#sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/21541fc.patch
+#wget https://github.com/miniupnp/miniupnp/commit/b78a363.patch -O feeds/packages/net/miniupnpd/patches/b78a363.patch
+#sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/b78a363.patch
+#wget https://github.com/miniupnp/miniupnp/commit/8f2f392.patch -O feeds/packages/net/miniupnpd/patches/8f2f392.patch
+#sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/8f2f392.patch
+#wget https://github.com/miniupnp/miniupnp/commit/60f5705.patch -O feeds/packages/net/miniupnpd/patches/60f5705.patch
+#sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/60f5705.patch
+#wget https://github.com/miniupnp/miniupnp/commit/3f3582b.patch -O feeds/packages/net/miniupnpd/patches/3f3582b.patch
+#sed -i 's,/miniupnpd/,/,g' ./feeds/packages/net/miniupnpd/patches/3f3582b.patch
+#pushd feeds/packages
+#patch -p1 <../../../PATCH/miniupnpd/01-set-presentation_url.patch
+#patch -p1 <../../../PATCH/miniupnpd/02-force_forwarding.patch
+#patch -p1 <../../../PATCH/miniupnpd/03-Update-301-options-force_forwarding-support.patch.patch
+#popd
+#pushd feeds/luci
+#wget -qO- https://github.com/openwrt/luci/commit/0b5fb915.patch | patch -p1
+#popd
 # ChinaDNS
 git clone -b luci --depth 1 https://github.com/QiuSimons/openwrt-chinadns-ng.git package/new/luci-app-chinadns-ng
 cp -rf ../passwall_pkg/chinadns-ng ./package/new/chinadns-ng
@@ -408,21 +408,21 @@ wget -qO - https://github.com/Lienol/openwrt-package/pull/39.patch | patch -p1
 popd
 sed -i '/socat\.config/d' feeds/packages/net/socat/Makefile
 # natmap
-git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
-pushd package/luci-app-natmapt
-umask 022
-git checkout
-popd
-git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-natmapt.git package/natmapt
-pushd package/natmapt
-umask 022
-git checkout
-popd
-git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-stuntman.git package/stuntman
-pushd package/stuntman
-umask 022
-git checkout
-popd
+#git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
+#pushd package/luci-app-natmapt
+#umask 022
+#git checkout
+#popd
+#git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-natmapt.git package/natmapt
+#pushd package/natmapt
+#umask 022
+#git checkout
+#popd
+#git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-stuntman.git package/stuntman
+#pushd package/stuntman
+#umask 022
+#git checkout
+#popd
 # 订阅转换
 cp -rf ../immortalwrt_pkg/net/subconverter ./feeds/packages/net/subconverter
 ln -sf ../../../feeds/packages/net/subconverter ./package/feeds/packages/subconverter
@@ -461,7 +461,7 @@ cp -rf ../lede_pkg/net/vlmcsd ./package/new/vlmcsd
 git clone -b master --depth 1 https://github.com/jerrykuku/luci-app-vssr.git package/new/luci-app-vssr
 git clone -b master --depth 1 https://github.com/jerrykuku/lua-maxminddb.git package/new/lua-maxminddb
 # 网络唤醒
-cp -rf ../zxlhhyccc/zxlhhyccc/luci-app-wolplus ./package/new/luci-app-wolplus
+#cp -rf ../zxlhhyccc/zxlhhyccc/luci-app-wolplus ./package/new/luci-app-wolplus
 # 流量监视
 #git clone -b master --depth 1 https://github.com/brvphoenix/wrtbwmon.git package/new/wrtbwmon
 #git clone -b master --depth 1 https://github.com/brvphoenix/luci-app-wrtbwmon.git package/new/luci-app-wrtbwmon
